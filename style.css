@@ -100,9 +100,9 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  gap: clamp(56px, 8vw, 96px);
-  padding-top: clamp(32px, 5vw, 60px);
-  padding-bottom: clamp(80px, 10vw, 140px);
+  gap: 96px;
+  padding-top: 40px;
+  padding-bottom: 120px;
 }
 
 /* header */
@@ -113,13 +113,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: clamp(16px, 4vw, 24px) clamp(16px, 6vw, 48px);
+  padding: 24px 48px;
   width: min(1200px, 100%);
   margin: 0 auto;
   background: var(--background-color);
   backdrop-filter: blur(16px);
-  gap: 20px;
-  flex-wrap: wrap;
 }
 
 .header img {
@@ -133,7 +131,6 @@ main {
   display: flex;
   gap: 40px;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .header #sections a {
@@ -148,11 +145,6 @@ main {
 
 .header #sections a:hover {
   color: var(--text-color);
-}
-
-.header #user-actions {
-  display: flex;
-  align-items: center;
 }
 
 .header #user-actions .btn-login {
@@ -179,7 +171,7 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
 .content-section {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 clamp(16px, 5vw, 48px);
+  padding: 0 48px;
   scroll-margin-top: 120px;
 }
 
@@ -199,7 +191,7 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
 .home h1 {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: clamp(2.25rem, 6vw, 4rem);
+  font-size: 64px;
   color: var(--text-color);
 }
 
@@ -211,7 +203,7 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
 }
 
 .home .lead {
-  font-size: clamp(1rem, 3.5vw, 1.25rem);
+  font-size: 1.25rem;
   max-width: 620px;
   margin: 0 auto;
   color: var(--text-muted);
@@ -257,7 +249,7 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
 .home img {
   width: 100%;
   max-width: 1000px;
-  margin-top: clamp(60px, 10vw, 110px);
+  margin-top: 110px;
 }
 
 /* catalogo section */
@@ -268,17 +260,10 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
   font-weight: 500;
 }
 
-#catalogo {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 clamp(16px, 5vw, 48px);
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
 #catalogo .filter {
   display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
   justify-content: center;
 }
 
@@ -287,12 +272,9 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
   border: 1px solid var(--outline);
   border-radius: 30px;
   display: flex;
-  flex-wrap: wrap;
-  gap: clamp(12px, 4vw, 32px);
-  padding: clamp(14px, 4vw, 20px);
-  width: 100%;
-  max-width: 960px;
-  justify-content: center;
+  gap: 55px;
+  padding: 20px;
+  width: 91%;
 }
 
 #catalogo .filter ul a {
@@ -305,12 +287,6 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
   border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.3s ease;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 140px;
-  flex: 1 1 140px;
-  text-align: center;
 }
 
 #catalogo .filter ul a.active {
@@ -326,10 +302,10 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
 }
 
 .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 91%;
   margin: 0 auto;
 }
 
@@ -491,34 +467,13 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
 }
 
 .cards_planos {
-  position: relative;
   display: flex;
   justify-content: center;
-  width: min(1100px, 100%);
   padding: clamp(28px, 5vw, 48px);
   border-radius: 36px;
   background: linear-gradient(140deg, #faecc7 0%, #fff 30%, #f6e8fe 100%);
   box-shadow: 0 30px 80px rgba(15, 23, 42, 0.15);
-  overflow: hidden;
-  isolation: isolate;
   gap: 30px;
-}
-
-.cards_planos::before,
-.cards_planos::after {
-  content: "";
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  filter: blur(80px);
-  z-index: -1;
-}
-
-.cards_planos::after {
-  bottom: -140px;
-  right: -40px;
-  background: rgba(219, 158, 255, 0.45);
 }
 
 .cards_planos .plano {
@@ -709,104 +664,20 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
   background: linear-gradient(120deg, #111827, #1f2937);
 }
 
-@media (max-width: 900px) {
-  .home #icons {
+@media (max-width: 640px) {
+  .header {
     display: none;
   }
 
-  .products {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .header #sections {
-    width: 100%;
-    justify-content: flex-start;
-    gap: 16px;
-  }
-
-  .header #user-actions {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .home {
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .home .lead {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  #catalogo {
-    gap: 20px;
-  }
-
   #catalogo .filter ul {
-    border-radius: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
   }
 
-  .card .price-action {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .cards_planos {
-    flex-direction: column;
-    width: 100%;
-  }
-}
-
-@media (max-width: 580px) {
-  .header {
-    align-items: center;
-  }
-
-  .header #sections {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .header #user-actions {
-    justify-content: center;
-  }
-
-  .home {
-    align-items: center;
-    text-align: center;
-  }
-
-  .home .lead {
-    text-align: center;
-  }
-
-  #catalogo .filter ul a {
-    flex: 1 1 100%;
-    min-width: unset;
-  }
-
-  .products {
-    grid-template-columns: 1fr;
-  }
-
-  #action_button {
-    width: 100%;
-  }
-}
-
-@media (max-width: 640px) {
   .cards_planos {
     padding: 24px;
+    flex-direction: column;
   }
 
   .plano__header {
