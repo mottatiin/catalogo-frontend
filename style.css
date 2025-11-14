@@ -189,7 +189,7 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
 }
 
 .home h1 {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-weight: 600;
   font-size: 64px;
   color: var(--text-color);
@@ -284,6 +284,7 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
   padding: 5px 15px;
   border-radius: 30px;
   color: var(--text-muted);
+  align-content: center;
   border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -461,7 +462,7 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
   padding: clamp(20px, 6vw, 60px) 24px;
 }
 
-#planos h2 {
+#planos h2#title_section {
   font-size: 40px;
   font-weight: 500;
 }
@@ -518,11 +519,10 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
   font-size: 0.9rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #7a5d30;
+  min-width: max-content;
   padding: 6px 16px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(146, 118, 75, 0.3);
 }
 
 .plano[data-cat="anual"] tag {
@@ -536,6 +536,7 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
 }
 
 .plano__header {
+  min-width: max-content;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -579,7 +580,7 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
 .cards_planos .plano h2 {
   color: var(--text-muted-more);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 18px;
 }
 
 .cards_planos .plano h3 {
@@ -603,6 +604,7 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
 }
 
 .plano[data-cat="mensal"] .plano__economia {
+  display: none;
   border: 1px solid rgba(129, 43, 155, 0.2);
   color: #692b9b;
 }
@@ -664,6 +666,18 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
   background: linear-gradient(120deg, #111827, #1f2937);
 }
 
+@media (max-width: 1000px) and (orientation: landscape) {
+  .products .card {
+    width: 48%;
+  }
+
+  .cards_planos {
+    padding: 0px;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
 @media (max-width: 640px) {
   .header {
     display: none;
@@ -676,8 +690,15 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
   }
 
   .cards_planos {
-    padding: 24px;
+    width: min(600px, 100%);
+    padding: 0px;
+    background: transparent;
     flex-direction: column;
+    box-shadow: none;
+  }
+
+  .cards_planos .plano {
+    gap: 15px;
   }
 
   .plano__header {
@@ -690,6 +711,7 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
   }
 
   .plano__benefits li {
+    font-size: 13px;
     align-items: flex-start;
   }
 }
