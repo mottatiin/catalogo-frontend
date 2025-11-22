@@ -666,60 +666,11 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
   background: linear-gradient(120deg, #111827, #1f2937);
 }
 
-@media (max-width: 1000px) and (orientation: landscape) {
-  .products .card {
-    width: 48%;
-  }
-
-  .cards_planos {
-    padding: 0px;
-    background: transparent;
-    box-shadow: none;
-  }
-}
-
-@media (max-width: 640px) {
-  .header {
-    display: none;
-  }
-
-  #catalogo .filter ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-
-  .cards_planos {
-    width: min(600px, 100%);
-    padding: 0px;
-    background: transparent;
-    flex-direction: column;
-    box-shadow: none;
-  }
-
-  .cards_planos .plano {
-    gap: 15px;
-  }
-
-  .plano__header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .plano__subtitle {
-    font-size: 0.95rem;
-  }
-
-  .plano__benefits li {
-    font-size: 13px;
-    align-items: flex-start;
-  }
-}
-
 /* Faq */
 
 #faq .faq {
   padding: 20px;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
@@ -778,4 +729,61 @@ summary:after {
 }
 details[open] summary:after {
   content: "-";
+}
+
+@media (max-width: 1000px) and (orientation: landscape) {
+  .products .card {
+    width: 48%;
+  }
+
+  .cards_planos {
+    padding: 0px;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    display: none;
+  }
+
+  #catalogo .filter ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .cards_planos {
+    width: min(600px, 100%);
+    padding: 0px;
+    background: transparent;
+    flex-direction: column;
+    box-shadow: none;
+  }
+
+  .cards_planos .plano {
+    gap: 15px;
+  }
+
+  .plano__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .plano__subtitle {
+    font-size: 0.95rem;
+  }
+
+  .plano__benefits li {
+    font-size: 13px;
+    align-items: flex-start;
+  }
+
+  #faq .faq {
+    padding: 10px;
+    padding-bottom: 20px;
+    gap: 15px;
+    width: 90%;
+  }
 }
