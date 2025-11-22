@@ -715,3 +715,67 @@ body:not(:has(.content-section:target)) .header #sections a[href="#homepage"] {
     align-items: flex-start;
   }
 }
+
+/* Faq */
+
+#faq .faq {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  gap: 20px;
+  width: 55%;
+  margin: auto;
+  background-color: #ffffff;
+  border: 1px solid var(--outline);
+}
+
+#faq .faq h3 {
+  align-self: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#faq .faq details {
+  padding: 20px 20px;
+  align-content: center;
+  background-color: #0000000a;
+  border: 1px solid var(--outline);
+  border-radius: 12px;
+  transition: all 0.3ms ease;
+}
+
+.faq details {
+  margin-left: 20px;
+}
+
+.faq details summary {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  list-style: none;
+  color: var(--text-muted);
+}
+
+.faq details p {
+  margin-top: 10px;
+  color: var(--text-color);
+}
+
+.faq details a {
+  color: #455a86;
+}
+
+summary:after {
+  content: "+";
+  color: #181818;
+  font-size: 15px;
+  float: right;
+  padding: 0;
+  text-align: center;
+  width: 20px;
+  left: 20px;
+  margin-right: 10px;
+}
+details[open] summary:after {
+  content: "-";
+}
